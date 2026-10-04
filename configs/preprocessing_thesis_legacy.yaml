@@ -1,0 +1,32 @@
+seed: 42
+target_fs: 100
+epoch_sec: 30
+filter:
+  low_hz: 1.0
+  high_hz: 50.0
+normalization: epoch
+
+datasets:
+  hmc:
+    raw_root: datasets/raw/hmc
+    out_root: datasets/processed/hmc
+    trim_wake: false
+    keep_epochs_each_side: 60
+    single_channels: ["EEG C4-M1"]
+    multi_channels: ["EEG C4-M1", "EOG E1-M2"]
+  sleepedf:
+    raw_root: datasets/raw/sleepedf
+    out_root: datasets/processed/sleepedf
+    trim_wake: true
+    keep_epochs_each_side: 60
+    single_channels: ["EEG Fpz-Cz"]
+    multi_channels: ["EEG Fpz-Cz", "EOG horizontal"]
+  isruc:
+    raw_root: datasets/raw/isruc
+    out_root: datasets/processed/isruc
+    trim_wake: false
+    keep_epochs_each_side: 60
+    label_scheme: rk_0_5
+    eeg_candidates: ["C4-M1", "C4-A1", "C3-M2", "C3-A2"]
+    eog_candidates: ["E1-M2", "E2-M1", "ROC-A1", "LOC-A2"]
+    expert: 1

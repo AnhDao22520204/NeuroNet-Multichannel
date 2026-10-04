@@ -1,0 +1,9 @@
+manifest: datasets/manifests/source_manifest.json
+output: datasets/splits/source_split_seed42.json
+datasets: [HMC, SleepEDF]
+seed: 42
+train_ratio: 0.60
+val_ratio: 0.20
+test_ratio: 0.20
+require_both_channels: true
+stratify_by_dataset: true

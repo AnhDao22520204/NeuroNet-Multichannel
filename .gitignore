@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+
+# Data / generated artifacts
+datasets/raw/**
+datasets/processed/**
+outputs/**
+*.npz
+*.pth
+*.pt
+*.ckpt
+*.npy
+
+# Keep directory placeholders
+!datasets/raw/.gitkeep
+!datasets/processed/.gitkeep
+!outputs/.gitkeep
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,20 @@
+experiment:
+  seed: 777
+  channel_mode: multi
+  manifest: datasets/manifests/isruc_manifest.json
+  split: datasets/splits/isruc_split_seed42.json
+  pretrain_checkpoint: null
+  initial_finetuned_checkpoint: outputs/finetune/multi/best_model.pth
+  output_dir: outputs/isruc/adapt_multi
+sequence:
+  context_length: 20
+  train_stride: 10
+  eval_stride: 20
+training:
+  epochs: 50
+  batch_size: 16
+  num_workers: 0
+  learning_rate: 5.0e-4
+  embed_dim: 256
+  temporal_context_module: lstm
+  unfreeze_last_encoder_blocks: 1

@@ -1,0 +1,36 @@
+experiment:
+  seed: 777
+  channel_mode: multi
+  manifest: datasets/manifests/source_manifest.json
+  split: datasets/splits/source_split_seed42.json
+  output_dir: outputs/pretrain/multi
+
+data:
+  batch_size: 64
+  num_workers: 0
+  scaler: false
+model:
+  fs: 100
+  second: 30
+  time_window: 3
+  time_step: 0.375
+  encoder_embed_dim: 768
+  encoder_heads: 8
+  encoder_depths: 4
+  decoder_embed_dim: 256
+  decoder_heads: 8
+  decoder_depths: 3
+  projection_hidden: [1024, 512]
+  temperature: 0.05
+training:
+  epochs: 30
+  base_learning_rate: 1.0e-5
+  batch_accumulation: 1
+  mask_ratio: 0.8
+  alpha: 1.0
+  print_every: 50
+probe:
+  pca_components: 50
+  n_neighbors: 5
+  max_train_samples: 50000
+  batch_size: 256

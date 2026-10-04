@@ -1,0 +1,11 @@
+checkpoint: outputs/finetune/single/best_model.pth
+manifest: datasets/manifests/isruc_manifest.json
+split: datasets/splits/isruc_split_seed42.json
+partition: test
+channel_mode: single
+output_dir: outputs/isruc/zero_shot_single
+sequence:
+  context_length: 20
+  stride: 20
+  batch_size: 16
+  num_workers: 0

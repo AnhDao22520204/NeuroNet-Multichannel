@@ -1,0 +1,20 @@
+experiment:
+  seed: 777
+  channel_mode: single
+  manifest: datasets/manifests/source_manifest.json
+  split: datasets/splits/source_split_seed42.json
+  pretrain_checkpoint: outputs/pretrain/single/best_model.pth
+  initial_finetuned_checkpoint: null
+  output_dir: outputs/finetune/single
+sequence:
+  context_length: 20
+  train_stride: 10
+  eval_stride: 20
+training:
+  epochs: 50
+  batch_size: 16
+  num_workers: 0
+  learning_rate: 5.0e-4
+  embed_dim: 256
+  temporal_context_module: lstm
+  unfreeze_last_encoder_blocks: 1
